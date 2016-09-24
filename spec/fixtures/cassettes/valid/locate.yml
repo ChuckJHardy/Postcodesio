@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.postcodes.io/postcodes?format=json&lat=50.827152&lon=-3.591682
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.11.3
+      Date:
+      - Sat, 24 Sep 2016 11:26:58 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '743'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - W/"2e7-9D3VZCxIgmOdAZxo617MQA"
+      X-Gnu:
+      - Michael J Blanchard
+    body:
+      encoding: UTF-8
+      string: '{"status":200,"result":[{"postcode":"EX17 4AZ","quality":1,"eastings":287994,"northings":104277,"country":"England","nhs_ha":"South
+        West","longitude":-3.59168076007149,"latitude":50.8271675496744,"parliamentary_constituency":"Central
+        Devon","european_electoral_region":"South West","primary_care_trust":"Devon","region":"South
+        West","lsoa":"Mid Devon 010A","msoa":"Mid Devon 010","incode":"4AZ","outcode":"EX17","distance":1.732027679,"admin_district":"Mid
+        Devon","parish":"Stockleigh Pomeroy","admin_county":"Devon","admin_ward":"Newbrooke","ccg":"NHS
+        North, East, West Devon","nuts":"Devon CC","codes":{"admin_district":"E07000042","admin_county":"E10000008","admin_ward":"E05008547","parish":"E04003050","ccg":"E38000129","nuts":"UKK43"}}]}'
+    http_version: 
+  recorded_at: Sat, 24 Sep 2016 11:26:58 GMT
+recorded_with: VCR 3.0.3
