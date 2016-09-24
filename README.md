@@ -12,7 +12,11 @@ Wrapper for Postcode.io API.
 
 Add this line to your application's Gemfile:
 
+    # Rubygems
     gem "postcodesio"
+
+    # Github
+    gem "postcodesio", git: "https://github.com/ChuckJHardy/Postcodesio.git", branch: :master
 
 And then execute:
 
