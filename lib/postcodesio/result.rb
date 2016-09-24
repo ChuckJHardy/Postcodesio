@@ -10,6 +10,10 @@ class Postcodesio
       build
     end
 
+    def valid?
+      true
+    end
+
     def build
       response.each(&define_method_for_header)
     end

@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.postcodes.io/postcodes?format=json&lat=50.827152&lon=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.11.3
+      Date:
+      - Sat, 24 Sep 2016 12:04:59 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '28'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - W/"1c-ijCnmhrGbFQS6ggPU9NQfQ"
+      X-Gnu:
+      - Michael J Blanchard
+    body:
+      encoding: UTF-8
+      string: '{"status":200,"result":null}'
+    http_version: 
+  recorded_at: Sat, 24 Sep 2016 12:04:59 GMT
+recorded_with: VCR 3.0.3

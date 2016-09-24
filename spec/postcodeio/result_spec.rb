@@ -43,6 +43,14 @@ RSpec.describe Postcodesio::Result do
     described_class.new(response: response)
   end
 
+  describe "#value?" do
+    subject(:valid) { instance.valid? }
+
+    it "returns true" do
+      expect(valid).to eq(true)
+    end
+  end
+
   describe "#as_hash" do
     subject(:as_hash) { instance.as_hash }
 

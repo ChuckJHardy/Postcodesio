@@ -8,9 +8,19 @@ RSpec.describe Postcodesio::Locate do
   let(:latitude) { "50.827152" }
   let(:longitude) { "-3.591682" }
 
-  it "calls off to DTO and returns" do
+  it "returns result object" do
     VCR.use_cassette("valid/locate") do
       expect(locate).to be_an_instance_of(Postcodesio::Result)
+    end
+  end
+
+  context "when there are no results" do
+    let(:longitude) { "5" }
+
+    it "return null result object" do
+      VCR.use_cassette("invalid/locate") do
+        expect(locate).to be_an_instance_of(Postcodesio::NullResult)
+      end
     end
   end
 end
