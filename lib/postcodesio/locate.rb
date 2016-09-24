@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "postcodesio/dto"
-require "postcodesio/null_result"
 require "postcodesio/result"
 
 class Postcodesio
@@ -16,13 +15,13 @@ class Postcodesio
     end
 
     def call
-      response ? Result.new(response: response) : NullResult.new
+      response.map(&Result)
     end
 
     private
 
     def response
-      @response ||= (dto[:result] || []).first
+      @response ||= dto[:result] || []
     end
 
     def dto

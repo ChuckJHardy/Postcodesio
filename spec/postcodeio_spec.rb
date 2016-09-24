@@ -6,12 +6,12 @@ RSpec.describe Postcodesio do
   describe ".locate" do
     subject(:locate) { described_class.locate(lat: latitude, lon: longitude) }
 
-    let(:latitude) { "50.827152" }
-    let(:longitude) { "-3.591682" }
+    let(:latitude) { "53.341446" }
+    let(:longitude) { "-2.21541" }
 
-    it "returns result object" do
+    it "returns collection of result objects" do
       VCR.use_cassette("valid/locate") do
-        expect(locate).to be_an_instance_of(Postcodesio::Result)
+        expect(locate.first).to be_an_instance_of(Postcodesio::Result)
       end
     end
   end

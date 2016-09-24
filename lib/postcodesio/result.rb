@@ -10,8 +10,8 @@ class Postcodesio
       build
     end
 
-    def valid?
-      true
+    def self.to_proc
+      ->(response) { new(response: response) }
     end
 
     def build

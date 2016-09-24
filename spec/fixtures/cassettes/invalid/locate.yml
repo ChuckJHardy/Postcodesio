@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.postcodes.io/postcodes?format=json&lat=50.827152&lon=5
+    uri: https://api.postcodes.io/postcodes?format=json&lat=53.341446&lon=5
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - nginx/1.11.3
       Date:
-      - Sat, 24 Sep 2016 12:04:59 GMT
+      - Sat, 24 Sep 2016 12:44:11 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -40,5 +40,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"status":200,"result":null}'
     http_version: 
-  recorded_at: Sat, 24 Sep 2016 12:04:59 GMT
+  recorded_at: Sat, 24 Sep 2016 12:44:11 GMT
 recorded_with: VCR 3.0.3
