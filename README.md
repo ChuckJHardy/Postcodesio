@@ -3,7 +3,6 @@
 Wrapper for Postcode.io API.
 
 * [API Documentation](http://postcodes.io/docs)
-* [Support](http://support.dexi.io/)
 
 ## Requirements
 
@@ -50,13 +49,26 @@ POSTCODESIO_VERBOSE=true
 
 #### Reverse Geolocate
 
+Valid Response
+
 ``` ruby
-result = Postcodesio.locate(lat: 50.827152, lon: -3.591682)
+result = Postcodesio.locate(lat: 50.827152, lon: -3.591682) # => #<Postcodesio::Result:0x007ffd7d132950>
+result.valid? # => true
 result.as_hash # => { ... }
 
 # Methods are dynamically defined based on headers. For example:
 result.methods.sort # => [..., :postcode, :country]
 result.postcode # => "EX17 4AZ"
+```
+
+Invalid Response
+
+``` ruby
+result = Postcodesio.locate(lat: 50.827152, lon: 5) # => #<Postcodesio::NullResult:0x007ffd7d132950>
+result.valid? # => false
+result.as_hash # => {}
+result.methods.sort # => [...]
+result.postcode # => NoMethodError: undefined method `postcode' for #<Postcodesio::NullResult:0x007f909499d758>
 ```
 
 ## PAW File
