@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
-def response
+def response # rubocop:disable Metrics/MethodLength
   {
     postcode: "EX17 4AZ",
     quality: 1,
-    eastings: 287994,
-    northings: 104277,
+    eastings: 287,
+    northings: 104,
     country: "England",
     nhs_ha: "South West",
     longitude: -3.59168076007149,

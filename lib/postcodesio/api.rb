@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "digest"
 require "faraday"
 require "faraday_middleware"
@@ -28,9 +30,7 @@ class Postcodesio
 
     private
 
-    # rubocop:disable Metrics/AbcSize
-    # rubocop:disable Metrics/MethodLength
-    def connection(domain)
+    def connection(domain) # rubocop:disable Metrics/MethodLength
       Faraday.new(url: domain) do |faraday|
         faraday.request :url_encoded
         faraday.request :request_headers,
@@ -38,7 +38,8 @@ class Postcodesio
                         content_type: "application/json"
 
         if Postcodesio.configuration.verbose
-          faraday.use :extended_logging, logger: Postcodesio.configuration.logger
+          faraday.use :extended_logging,
+                      logger: Postcodesio.configuration.logger
         end
 
         faraday.response :multi_json,
@@ -48,7 +49,5 @@ class Postcodesio
         faraday.adapter Faraday.default_adapter
       end
     end
-    # rubocop:enable Metrics/AbcSize
-    # rubocop:enable Metrics/MethodLength
   end
 end

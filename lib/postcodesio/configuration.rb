@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Postcodesio
   module Configure
     def configuration
@@ -9,15 +11,13 @@ class Postcodesio
       configuration
     end
 
-    private
-
     class Configuration
       attr_accessor :base_url,
                     :timeout,
                     :verbose,
                     :logger
 
-      def initialize # rubocop:disable Metrics/AbcSize
+      def initialize
         self.base_url = base_url_default
         self.timeout = timeout_default
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Postcodesio
   class Result
     attr_reader :response

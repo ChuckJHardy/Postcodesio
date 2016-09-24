@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Postcodesio
   class Validate
     def initialize(response:)
@@ -13,8 +15,8 @@ class Postcodesio
     end
 
     def validate
-      fail Postcodesio::InternalServerError, message if internal_error?
-      fail Postcodesio::NotFound, message if not_found?
+      raise Postcodesio::InternalServerError, message if internal_error?
+      raise Postcodesio::NotFound, message if not_found?
 
       true
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "postcodesio/dto"
 require "postcodesio/result"
 
@@ -22,7 +24,7 @@ class Postcodesio
       DTO.get(
         params: {
           lat: @lat,
-          lon: @lon,
+          lon: @lon
         }
       )
     end
